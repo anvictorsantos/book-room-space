@@ -26,5 +26,5 @@ Route::get('/email/verify/{id}', [VerificationController::class, 'verify'])
     ->name('verification.verify');
 
 Route::middleware('verified')->get('/home', function () {
-    return view('home');
+    return view('home.index');
 });
