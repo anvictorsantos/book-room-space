@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\Course;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Notifications\CustomVerifyEmail;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
@@ -16,6 +17,12 @@ class User extends Authenticatable
     const TYPE_ADMIN = 'Admin';
     const TYPE_MODERATOR = 'Moderator';
     const TYPE_FORMADOR = 'Formador';
+
+    // Sobrescreva o método que envia a notificação de verificação
+    public function sendEmailVerificationNotification()
+    {
+        $this->notify(new CustomVerifyEmail());
+    }
 
     /**
      * The attributes that are mass assignable.

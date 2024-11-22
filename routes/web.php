@@ -1,19 +1,30 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Auth\VerificationController;
 use Illuminate\Support\Facades\Route;
 
-// Redirecionar '/' para '/home'
-/* Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
 
-Route::get('/home', [HomeController::class, 'index'])->name('home'); */
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);
 
-//Rota de fallback (Tratamento de exceção do 404)
-/* Route::fallback(function () {
-    return redirect()->route('home');
-}); */
+Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 
-/* Route::fallback(function () {
-    return redirect()->route('user.register');
+Route::post('/email/resend', [VerificationController::class, 'resend'])->name('verification.resend');
+
+Route::get('/email/verify', function () {
+    return view('auth.verify');
+})->middleware('auth')->name('verification.notice');
+
+Route::get('/email/verify/{id}', [VerificationController::class, 'verify'])
+    ->middleware(['auth', 'signed'])
+    ->name('verification.verify');
+
+Route::middleware('verified')->get('/home', function () {
+    return view('home');
 });
- */
