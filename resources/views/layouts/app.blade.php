@@ -16,7 +16,7 @@
 <body>
     <div id="app">
         <!-- Corpo da página, o conteúdo específico de cada página será injetado aqui -->
-        <main class="py-4">
+        <main>
             @yield('content')  <!-- Aqui será inserido o conteúdo específico de cada página -->
         </main>
     </div>
