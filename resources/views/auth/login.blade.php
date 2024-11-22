@@ -36,6 +36,12 @@
                             <button type="submit" class="btn btn-primary w-100">Entrar</button>
                         </div>
                     </form>
+
+                    <!-- Adicionando o botão de "Registrar-se" caso o usuário não tenha conta -->
+                    <div class="text-center mt-3">
+                        <p>Não tem uma conta?</p>
+                        <a href="{{ route('register') }}" class="btn btn-secondary w-100">Registrar-se</a>
+                    </div>
                 </div>
             </div>
         </div>

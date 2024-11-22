@@ -7,11 +7,6 @@
                 <img src="{{ asset('images/logo_cesae-cores_horizontal.png') }}" alt="CESAE" id="logoBrand">
             </a>
             <div class="d-flex ms-auto">
-                <a class="d-flex align-items-center me-3">
-                    <div id="icons">
-                        <i class="fa-regular fa-bell"></i>
-                    </div>
-                </a>
                 <a class="d-flex align-items-center">
                     <div class="dropdown">
                         <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -21,14 +16,12 @@
                             </div>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-center">
-                            <li><a class="dropdown-item" href="#">Login</a></li>
                             <li>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-inline">
                                     @csrf
                                     <button type="submit" class="dropdown-item bg-transparent border-0 text-dark">Logout</button>
                                 </form>
                             </li>
-                            <li><a class="dropdown-item" href="#">Dashboard</a></li>
                         </ul>
                     </div>
                 </a>
@@ -47,68 +40,44 @@
                 </a>
             </li>
             <li class="has-subnav">
-                <a href="#">
+                <a href="{{ route('reservations.index') }}">
                     <i class="fa fa-globe"></i>
                     <span class="nav-text">
-                        Global Surveyors
+                        Reservas
                     </span>
                 </a>
             </li>
             <li class="has-subnav">
-                <a href="#">
+                <a href="{{ route('stats') }}">
                     <i class="fa fa-comments"></i>
                     <span class="nav-text">
-                        Group Hub Forums
+                        Estatíticas
                     </span>
                 </a>
 
             </li>
             <li class="has-subnav">
-                <a href="#">
+                <a href="{{ route('locals.index') }}">
                     <i class="fa fa-camera-retro"></i>
                     <span class="nav-text">
-                        Survey Photos
+                        Locais
                     </span>
                 </a>
 
             </li>
             <li>
-                <a href="#">
+                <a href="{{ route('rooms.index') }}">
                     <i class="fa fa-film"></i>
                     <span class="nav-text">
-                        Surveying Tutorials
+                        Salas
                     </span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{ route('courses.index') }}">
                     <i class="fa fa-book"></i>
                     <span class="nav-text">
-                        Surveying Jobs
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-cogs"></i>
-                    <span class="nav-text">
-                        Tools & Resources
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-map-marker"></i>
-                    <span class="nav-text">
-                        Member Map
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-info"></i>
-                    <span class="nav-text">
-                        Documentation
+                        Cursos
                     </span>
                 </a>
             </li>

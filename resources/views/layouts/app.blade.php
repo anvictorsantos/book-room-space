@@ -22,7 +22,7 @@
     </div>
 
     <!-- Scripts do Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0H0UJrJZz1y7yXwEmCZhtl9Xz1tK8pGQjPRibjO7q8SO9wT4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Outros scripts (se necessário) -->
     {{-- @stack('scripts')  <!-- Para incluir scripts adicionais --> --}}
